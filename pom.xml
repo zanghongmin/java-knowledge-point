@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>thread</module>
+        <module>dataStructure</module>
+        <module>algorithm</module>
+        <module>lock</module>
     </modules>
 
     <build>

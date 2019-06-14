@@ -39,5 +39,12 @@
 
 1. [托尔斯泰](http://www.xuxueli.com/blog/#/)
 
+https://www.jianshu.com/p/65a9929e0cf4
+
+https://github.com/CyC2018/CS-Notes
+
+https://www.cnblogs.com/cjsblog/p/8365921.html   -- MySQL事务隔离级别的实现原理
+
+
         
 

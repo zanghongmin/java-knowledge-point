@@ -2,11 +2,16 @@ package top.zanghongmin.thread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class InterruptedThread extends Thread {
 
 
     public static void main(String[] args) throws Exception {
+
 
 //        Thread newThread = new Thread(blockThread);
 //        newThread.start();
@@ -24,8 +29,7 @@ public class InterruptedThread extends Thread {
 //        Thread.sleep(3000);
 //        System.out.println("Stopping application...");
 
-
-        Thread newThread = new Thread(IOblockThread);
+        Thread newThread = new Thread(testThread);
         newThread.start();
         Thread.sleep(3000);
         System.out.println("Asking thread to stop...");
@@ -44,6 +48,24 @@ public class InterruptedThread extends Thread {
                 long time = System.currentTimeMillis();
                 // 使用while循环模拟 sleep
                 while ((System.currentTimeMillis() - time < 1000)) {
+                }
+            }
+        }
+    };
+
+
+    static Runnable testThread = new Runnable() {
+        public void run() {
+
+            while (!Thread.currentThread().isInterrupted()) {
+                try {
+                    System.out.println("2222");
+                    TimeUnit.HOURS.sleep(1);
+
+                } catch (InterruptedException e) {
+                    System.out.println("catch2222");
+                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }
